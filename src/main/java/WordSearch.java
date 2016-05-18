@@ -15,6 +15,7 @@ public class WordSearch {
 
         //return hard-coded JSON strings
 
+
         Spark.get(
 
                 "/capabilities",
@@ -97,6 +98,15 @@ public class WordSearch {
                                     "        }\n" +
                                     "    ]\n" +
                                     "}";
+                }
+        );
+
+        Spark.get(
+                "/",
+                (request, response) -> {
+                    response.redirect("/capabilities");
+
+                    return "";
                 }
         );
     }
